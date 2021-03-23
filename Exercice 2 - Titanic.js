@@ -8,8 +8,10 @@ db.titanic.find().sort({ PassengerId:+1 }).pretty();
 db.titanic.find({ Survived: "0" }).count();
 
 // Combien de passagers du titanic ont survécu ? Donnez le résultat avec la requête associer.
+db.titanic.find({ Survived: "1" }).count();
 
 // Affichez les noms de tous les passagers masculins ayant survécu et âgé de moins de 30 ans. 
+db.titanic.find({ Survived: "1", "Age": { $lt: "30" } }).count();
 
 // Affichez les noms de tous les passagers féminins ayant survécu et âgé de plus de 30 ans.
-
+db.titanic.find({ Survived: "0", "Age": { $gt: "30" } }).count();
