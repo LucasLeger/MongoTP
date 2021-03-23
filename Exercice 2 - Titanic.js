@@ -1,9 +1,5 @@
 // Liste de tous les passagers âgés de 40 ans ou plus 
-<<<<<<< Updated upstream
 db.titanic.find({ Age: { $gte: 40} }).pretty();
-=======
-db.titanic.find({"Age": { $gte: "40"}}).pretty();
->>>>>>> Stashed changes
 
 // Liste de tous les passagers par ordre de leur ID (PassangerId)
 db.titanic.find().sort({ PassengerId:+1 }).pretty();
