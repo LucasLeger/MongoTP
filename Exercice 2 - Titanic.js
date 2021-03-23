@@ -9,9 +9,7 @@ db.titanic.find({ Survived: "0" }).count();
 
 // Combien de passagers du titanic ont survécu ? Donnez le résultat avec la requête associer.
 
-
 // Affichez les noms de tous les passagers masculins ayant survécu et âgé de moins de 30 ans. 
-
 
 // Affichez les noms de tous les passagers féminins ayant survécu et âgé de plus de 30 ans.
 
