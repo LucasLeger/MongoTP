@@ -19,8 +19,8 @@ db.airbnb.find(
         }}}).pretty();
 
 // Mettre a jour tous les Airbnbs qui ont un review par mois supérieur a 1 en ajoutant l’information suivante :
-db.airbnb.insertMany({"reviews_per_month": {$gt: 1}}, {$set: {
-    "Reviews":[
+db.airbnb.updateMany({"reviews_per_month": {$gt: 1}}, {$set: {
+    "reviews":[
         {
             "author": "author 1",
             "comments": "comments 1",
@@ -43,3 +43,4 @@ db.airbnb.insertMany({"reviews_per_month": {$gt: 1}}, {$set: {
 
 /* Mettre à jour tous les reviews des Airbnbs qui ont un review par mois supérieur a 1 et 
 une note supérieure à 5 en ajoutant le ﬁeld suivant “ goodRating: true */
+db.airbnb.updateMany({"reviews_per_month": {$gt: 1}, "reviews.note": {$gt: 5}}, {$set: { "goodRating": true}})
