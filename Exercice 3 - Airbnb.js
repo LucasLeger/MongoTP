@@ -7,7 +7,7 @@ db.airbnb.find({"latitude": {$lte: 40.7493020660364}, "longitude": {$lte: -73.98
 
 
 // Mettre a jour tous les Airbnbs qui ont un review par mois supérieur a 1 en ajoutant l’information suivante :
-db.airbnb.insertMany({"reviews_per_month": {$gt: 1}}, {$set: {
+db.airbnb.updateMany({"reviews_per_month": {$gt: 1}}, {$set: {
     "Reviews":[
         {
             "author": "author 1",
