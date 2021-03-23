@@ -25,5 +25,5 @@ db.netflix.find({type: "TV Show", director:""}).pretty()
 db.netflix.find({ type: "Movie", "cast" : { $regex: ".Eliza Taylor." } }).count();
 
 //  Liste le nom  de tous les ﬁlms qui ont une durée supérieur a 120 minutes
-db.netflix.aggregate([{$match: {"type": "Movie"}},{$project: {"title": "$title"}, {"duration": "$duration"}}, {duration: { $rtrim: { input: "$duration", chars:" min"}}}])
+db.netflix.aggregate([{$match: {"type": "Movie"}},{$project: {"title": "$title", "duration": "$duration"}}, {duration: { $rtrim: { input: "$duration", chars:" min"}}}])
 db.netflix.find({type: "Movie", "duration": {$elemMatch: {$gt: "120"}}}).pretty()
