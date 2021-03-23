@@ -8,8 +8,8 @@ db.airbnb.find(
     $geometry: { type: "Point", coordinates: [ -73.98566, 40.74844 ] },
     $maxDistance: 10000
         }
-    }}, { price: { $lte: 150 } }, { minimum_nights: { $gte: 3 } }
-     ).pretty();
+    },  price: { $lte: 150 } ,  minimum_nights: { $gte: 3 } 
+}).pretty();
 
 /*  Liste de tous les Airbnbs compris dans la zone 
 “Washington Square park - Prospect Park Zoo - Maria Hernandez Park” */
